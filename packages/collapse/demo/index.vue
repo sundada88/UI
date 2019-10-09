@@ -95,13 +95,46 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .box {
-  width: 320px;
+  // width: 320px;
   height: 600px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 0px;
+  }
+}
+.sun-progress {
+  height: 4px;
+  position: relative;
+  border-radius: 4px;
+  background: #e5e5e5;
+
+  &-portion {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    border-radius: inherit;
+  }
+  &-with-pivot {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &-pivot {
+    top: 50%;
+    right: 0;
+    min-width: 2em;
+    padding: 0 5px;
+    font-size: 10px;
+    position: absolute;
+    line-height: 1.6;
+    text-align: center;
+    border-radius: 1em;
+    word-break: keep-all;
+    box-sizing: border-box;
+    background-color: #e5e5e5;
+    transform: translate(100%, -50%);
   }
 }
 </style>

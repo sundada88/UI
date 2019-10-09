@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import icon from "../icon/icon.vue"
+import icon from "../icon"
 import mixins from 'packages/utils/mixins/cell.js'
 export default {
   mixins: [mixins],
@@ -173,6 +173,7 @@ export default {
   &-click {
     &:active {
       background-color: #e8e8e8;
+      // background-color: red;
     }
   }
   &-required {

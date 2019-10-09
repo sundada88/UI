@@ -15,7 +15,7 @@
 <script>
 
 import isSrc from "../utils/icon/src"
-import info from "../info/info"
+import info from "../info"
 export default {
   name: "sun-icon",
   componemts: {

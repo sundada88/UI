@@ -5,6 +5,7 @@ import {
 } from './index'
 window.syncPath = function () {
   const router = window.vueRouter
+  // 判断是否为iframe窗口
   const isInIframe = window !== window.top
   const currentDir = router.history.current.path
   if (!isInIframe && !isMobile) {

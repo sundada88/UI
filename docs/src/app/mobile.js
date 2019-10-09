@@ -4,6 +4,10 @@ import Doc from "../../doc/src/main"
 import ui from '../../../packages/main'
 import App from './App'
 import routes from '../router'
+import './helper/touch-simulator'
+// import {
+//   isMobile
+// } from '../assets/js/index'
 Vue.use(VueRouter)
   .use(ui)
   .use(Doc)
@@ -14,6 +18,23 @@ const router = new VueRouter({
     mobile: true
   })
 })
+window.onresize = function () {
+  if (document.documentElement.clientWidth > 800) {
+    location.replace('/' + location.hash)
+  }
+}
+
+// router.beforeEach((to, from, next) => {
+//   if (isMobile) {
+//     return
+//   } else {
+//     if (document.documentElement.clientWidth > 800) {
+//       console.log(location.hash)
+//       location.replace('/' + location.hash)
+//     }
+//   }
+//   next()
+// })
 router.afterEach(() => {
   Vue.nextTick(() => window.syncPath())
 })

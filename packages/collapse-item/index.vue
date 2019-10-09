@@ -155,9 +155,8 @@ export default {
     & .sun-cell-right-icon {
       color: #c8c9cc;
     }
-
     &:active {
-      background-color: white;
+      background-color: white !important;
     }
   }
   &-expanded {

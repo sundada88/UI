@@ -1,12 +1,14 @@
 import Vue from 'vue'
-import Button from './button/button'
-import Cell from './cell/cell'
-import CellGroup from './cell-group/cell-group'
-import Collapse from './collapse/collapse'
-import CollapseItem from './collapse-item/collapse-item'
-import Icon from './icon/icon'
-import Info from './info/info'
-import Switch from './switch/switch'
+import Button from './button'
+import Cell from './cell'
+import CellGroup from './cell-group'
+import Collapse from './collapse'
+import CollapseItem from './collapse-item'
+import Icon from './icon'
+import Info from './info'
+import Progress from './progress'
+import Slider from './slider'
+import Switch from './switch'
 import "./style/base.css"
 
 const components = [
@@ -17,6 +19,8 @@ const components = [
   CollapseItem,
   Icon,
   Info,
+  Progress,
+  Slider,
   Switch
 ]
 const install = Vue => {
