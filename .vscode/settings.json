@@ -1,0 +1,29 @@
+{
+  "deploy": {
+    "packages": [
+      {
+        "files": ["**/*"],
+
+        "exclude": [
+          "node_modules/**",
+          ".git/**",
+          ".vscode/**",
+          "**/node_modules/**"
+        ],
+        "deployOnSave": false
+      }
+    ],
+    "targets": [
+      {
+        "type": "sftp",
+        "name": "ui组件库",
+        "dir": "/root/source/ui",
+        "host": "139.129.103.1",
+        "port": 22,
+        "user": "root",
+        // "privateKey": "c:/Users/Curious_Sun/.ssh/id_rsa"
+        "password": "SHY042868shy"
+      }
+    ]
+  }
+}
