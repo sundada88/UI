@@ -5,6 +5,17 @@ import ui from '../../../packages/main'
 import App from './App'
 import routes from '../router'
 import './helper/touch-simulator'
+
+// function $t(x) {
+//   return i18n[zh - CN][x]
+// }
+Vue.mixin({
+  methods: {
+    $t(type) {
+      return this.$options.i18n['zh-CN'][type]
+    }
+  }
+})
 // import {
 //   isMobile
 // } from '../assets/js/index'

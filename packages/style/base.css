@@ -15,3 +15,7 @@
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
 }
+
+.sun-overflow-hidden {
+  overflow: hidden !important;
+}

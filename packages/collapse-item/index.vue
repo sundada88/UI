@@ -130,7 +130,7 @@ export default {
 .sun-collapse-item {
   position: relative;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     bottom: 0;

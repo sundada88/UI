@@ -58,7 +58,7 @@
         />
       </demo-block>
 
-      <demo-block title="分组标题">
+      <!-- <demo-block title="分组标题">
         <sun-cell-group title="分组">
           <sun-cell
             title="单元格"
@@ -71,7 +71,7 @@
             value="内容"
           />
         </sun-cell-group>
-      </demo-block>
+      </demo-block> -->
       <demo-block title="高级用法">
         <sun-cell
           icon="shop-o"

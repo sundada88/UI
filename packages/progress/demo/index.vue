@@ -15,21 +15,28 @@
       </demo-block>
       <demo-block title="样式定制">
         <sun-progress
+          pivot-text="橙色"
           color="#f2826a"
           :percentage="25"
-          pivot-text="orange"
         />
+
         <sun-progress
+          pivot-text="红色"
           color="#f44"
           :percentage="50"
-          pivot-text='red'
         />
+
         <sun-progress
-          :percentage="75"
-          pivot-text='purple'
+          :percentage="73"
+          pivot-text="紫色"
           pivot-color="#7232dd"
           color="linear-gradient(to right, #be99ff, #7232dd)"
         />
+      </demo-block>
+      <demo-block title="进度条内容自定制">
+        <sun-progress :percentage="10">
+          <div class="slider">测试</div>
+        </sun-progress>
       </demo-block>
     </demo-section>
   </div>
@@ -57,5 +64,13 @@ export default {
       margin: 20px 0;
     }
   }
+}
+.slider {
+  width: 40px;
+  background-color: red;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 20px;
 }
 </style>

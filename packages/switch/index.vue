@@ -2,7 +2,7 @@
   <div
     class="switch"
     @click="handleChange"
-    :class="{'is-active': checked}"
+    :class="{'is-active': checked, 'is-notactive': !checked, 'disabled': disabled}"
   >
     <input
       :active-value="activeValue"
@@ -10,20 +10,35 @@
       type="checkbox"
       class="switch__input"
     >
-    <span :style="value ? textColor : ''">{{this.activeText}}</span>
+    <span :style="[value ? textColor : '', {fontSize: '12px', fontWeight: 'bold', marginRight: '5px'}]">{{this.activeText}}</span>
     <span
       class="switch__core"
       ref="switchCore"
       :style="style"
-    ></span>
-    <span :style="!value ? textColor : ''">{{this.inactiveText}}</span>
+    >
+      <loading
+        class="switch-loading"
+        color='FFF'
+        v-if="loading"
+      />
+    </span>
+    <span :style="[!value ? textColor : '', {fontSize: '12px', fontWeight: 'bold', marginLeft: '5px'}]">{{this.inactiveText}}</span>
   </div>
 </template>
 
 <script>
+import loading from '../loading'
 export default {
   name: "sun-switch",
   props: {
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     value: {
       type: [Boolean, String, Number],
       default: false
@@ -55,14 +70,21 @@ export default {
   },
   methods: {
     handleChange () {
-      this.$emit("input", !this.value);
+      if (!this.disabled && !this.loading) {
+        this.$emit("input", !this.value)
+        this.$emit("change", !this.value)
+      }
     }
+  },
+  components: {
+    loading
   },
   computed: {
     checked () {
       return this.value;
     },
     textColor () {
+      // if (this.value) {
       return {
         color: this.value ? this.activeColor || 'red' : this.inactiveColor || 'red'
       }
@@ -71,6 +93,17 @@ export default {
       return {
         backgroundColor: this.value ? this.activeColor : this.inactiveColor
       };
+    },
+    loadingStyle () {
+      if (this.checked) {
+        return {
+          left: 0
+        }
+      } else {
+        return {
+          right: 0
+        }
+      }
     }
   }
 };
@@ -90,6 +123,9 @@ export default {
   vertical-align: middle;
   border-radius: 10px;
   -webkit-tap-highlight-color: transparent;
+}
+.disabled {
+  opacity: 0.3;
 }
 .switch__input {
   position: absolute;
@@ -116,7 +152,7 @@ export default {
   transition: all 0.3s;
 }
 .switch__core:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 1px;
   border-radius: 100%;
@@ -125,12 +161,43 @@ export default {
   background-color: #fff;
   transition: all 0.3s;
 }
+.switch-loading {
+  transition: all 0.3s;
+  z-index: 1;
+  width: 50% !important;
+  height: 50% !important;
+  position: absolute;
+}
+// &-node {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+// .is-notactive.switch {
+//   .sun-loading {
+//     width: 10px;
+//     height: 10px;
+//     position: absolute;
+//     z-index: 1;
+//     left: 3px;
+//   }
+// }
 .is-active.switch {
   .switch__core {
     background-color: red;
   }
+  // .sun-loading {
+  //   width: 10px;
+  //   height: 10px;
+  //   position: absolute;
+  //   z-index: 1;
+  //   right: 3px;
+  // }
   .switch__core:after {
     left: calc(100% - 17px);
   }
+}
+.is-active .switch-loading {
+  transform: translateX(20px);
 }
 </style>

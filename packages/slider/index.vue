@@ -77,8 +77,12 @@ export default {
     onTouchMove (event) {
       if (this.disabled) return
       this.touchMove(event)
+      console.log(this.deltaX)
       const rect = this.$el.getBoundingClientRect()
+      console.log(rect.width)
       const diff = this.deltaX / rect.width * 100
+      console.log(diff)
+      console.log(this.startValue + diff)
       this.updateValue(this.startValue + diff)
     },
     onTouchEnd () {
@@ -127,7 +131,7 @@ export default {
       right: 0;
       transform: translate3d(50%, -50%, 0);
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 200%;
         height: 200%;

@@ -3,7 +3,7 @@
 ### 使用指南
 
 ```javascript
-import { Progress } from "sun-bundle.js";
+import { Progress } from 'sun-bundle.js';
 
 Vue.use(Progress);
 ```
@@ -39,6 +39,27 @@ Vue.use(Progress);
   pivot-color="#7232dd"
   color="linear-gradient(to right, #be99ff, #7232dd)"
 />
+```
+
+### 进度条内容自定义
+
+可以使用使用 slot 自定义进度条内容
+
+```html
+<sun-progress :percentage="10">
+  <div class="slider">测试</div>
+</sun-progress>
+```
+
+```css
+.slider {
+  width: 40px;
+  background-color: red;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 20px;
+}
 ```
 
 ### API

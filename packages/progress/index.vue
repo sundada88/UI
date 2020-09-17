@@ -5,12 +5,19 @@
       :style="portionStyle"
     >
       <span
-        v-if="showPivot && text"
+        v-if="showPivot && text && !$slots.default"
         v-text="text"
         ref="pivot"
         :style="pivotStyle"
-        class='sun-progress-pivot'
+        class='sun-progress-pivot sun-progress-pivot-position'
       />
+      <span
+        ref="pivot"
+        v-if="$slots.default"
+        class="sun-progress-pivot-position"
+      >
+        <slot></slot>
+      </span>
     </span>
   </div>
 </template>
@@ -106,9 +113,6 @@ export default {
   }
 
   &-pivot {
-    position: absolute;
-    top: 50%;
-    right: 0;
     min-width: 2em;
     line-height: 1.6;
     text-align: center;
@@ -116,7 +120,12 @@ export default {
     padding: 0 5px;
     font-size: 10px;
     background-color: #e5e5e5;
-    transform: translate(100%, -50%);
+    &-position {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(100%, -50%);
+    }
   }
 }
 </style>

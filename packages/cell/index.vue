@@ -10,7 +10,7 @@
         :name="icon"
       ></icon>
     </slot>
-    <slot>
+    <slot name="img">
       <img
         v-if="img"
         :src="img"
@@ -51,6 +51,12 @@
     </slot>
     <div class="extra">
       <slot name="extra"></slot>
+    </div>
+    <div
+      class="sun-cell__right-el"
+      v-if="$slots.right"
+    >
+      <slot name="right" />
     </div>
   </div>
 </template>
@@ -191,5 +197,9 @@ export default {
   &-center {
     text-align: center;
   }
+}
+.sun-cell__right-el {
+  display: flex;
+  align-items: center;
 }
 </style>

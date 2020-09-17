@@ -1,21 +1,28 @@
 <template>
   <button
-    :class="['sun-button', 
-    'sun-button--' + size, 
-    'sun-button--' + type, 
-    {
-    'sun-button--disabled': disabled,
-    'sun-button--unclickable': disabled,
-    'sun-button--round': round,
-    'sun-button--animation': animation,
-  }]"
+    :class="[
+      'sun-button',
+      'sun-button-' + size,
+      'sun-button-' + type,
+      {
+        'sun-button-disabled': disabled,
+        'sun-button-unclickable': disabled,
+        'sun-button-round': round
+      }
+    ]"
     @click="handleClick"
     @touchstart="handleTouch"
-    style="background-image: radial-gradient(circle, red 10 %, transparent 10.01 %);"
   >
     <span class="sun-button-text">
-      <slot>{{text}}</slot>
+      <slot>{{ text }}</slot>
     </span>
+    <span
+      v-if="animation"
+      :style="{
+        backgroundImage: `radial-gradient(circle, ${color} 10%, transparent 10.01%)`
+      }"
+      class="sun-button-animation"
+    ></span>
   </button>
 </template>
 
@@ -25,7 +32,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: ''
+      default: 'blue'
     },
     animation: {
       type: Boolean,
@@ -51,30 +58,22 @@ export default {
       type: Boolean
     }
   },
-  data () {
+  data() {
     return {
       sundada: true
-    }
-  },
-  computed: {
-    style () {
-      if (this.color) {
-        return `backgroundImage: radial-gradient(circle, ${this.color} 10 %, transparent 10.01 %);`
-      }
-    }
+    };
   },
   methods: {
-    handleClick (event) {
+    handleClick(event) {
       if (!this.disabled) {
-        this.$emit('click', event)
+        this.$emit('click', event);
       }
     },
-    handleTouch () {
-      console.log("touchstart")
-      this.$emit("touchstart")
+    handleTouch() {
+      this.$emit('touchstart');
     }
   }
-}
+};
 </script>
 
 <style lang="less">
@@ -96,7 +95,7 @@ export default {
   border: 1px solid green;
   overflow: hidden;
 
-  &:not(.sun-button--animation)::before {
+  &:not(.sun-button-animation)::before {
     content: ' ';
     position: absolute;
     top: 50%;
@@ -110,53 +109,53 @@ export default {
     border-radius: inherit;
     transform: translate(-50%, -50%);
   }
-  &:not(.sun-button--animation):active::before {
+  &:not(.sun-button-animation):active::before {
     opacity: 0.15;
   }
-  &--unclickable::before {
+  &-unclickable::before {
     display: none;
   }
-  &--default {
+  &-default {
     color: @button-default-color;
     background-color: @button-default-background-color;
     border: 1px solid @button-default-border-color;
   }
-  &--primary {
+  &-primary {
     color: @button-primary-color;
     background-color: @button-primary-background-color;
     border: 1px solid @button-primary-border-color;
   }
-  &--danger {
+  &-danger {
     color: @button-danger-color;
     background-color: @button-danger-background-color;
     border: 1px solid @button-danger-border-color;
   }
-  &--warning {
+  &-warning {
     color: @button-warning-color;
     background-color: @button-warning-background-color;
     border: 1px solid @button-warning-border-color;
   }
-  &--normal {
+  &-normal {
     padding: 0 15px;
     font-size: 14px;
   }
-  &--small {
+  &-small {
     height: 30px;
     padding: 0 8px;
     min-width: 60px;
     font-size: 12px;
     line-height: 28px;
   }
-  &--large {
+  &-large {
     width: 100%;
     height: 50px;
     line-height: 48px;
     overflow: hidden;
   }
-  &--disabled {
+  &-disabled {
     opacity: 0.3;
   }
-  &--round {
+  &-round {
     border-radius: 10em;
   }
   &:active {
@@ -169,27 +168,22 @@ export default {
     outline: none;
   }
 }
-.sun-button--animation:before {
-  content: '';
+.sun-button-animation {
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  pointer-events: none;
-  background-image: radial-gradient(
-    circle,
-    blue 10%,
-    transparent 10.01%
-  ); /*设置径向渐变 */
+  pointer-events: none; /*设置径向渐变 */
   background-repeat: no-repeat;
   background-position: 50%;
+  // transform: scale(10, 10);
   transform: scale(10, 10);
   opacity: 0;
   transition: transform 0.3s, opacity 0.5s;
 }
-.sun-button--animation:active:before {
+.sun-button:active .sun-button-animation {
   /*设置初始状态 */
   transform: scale(0, 0);
   opacity: 0.3;
