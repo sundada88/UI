@@ -18,6 +18,13 @@
             alt=""
             style="display: inline-block;width: 100%; height: 100px;"
             slot="pulling"
+          >
+
+          <img
+            src="../../img/2.jpg"
+            alt=""
+            style="display: inline-block;width: 100%; height: 100px;"
+            slot="loosing"
           > -->
           <p style="text-align: center;">刷新次数：{{count}}</p>
         </sun-pull-refresh>
@@ -31,7 +38,7 @@
     data () {
       return {
         count: 0,
-        headHeight: 100,
+        // headHeight: 100,
         isLoading: false
       }
     },

@@ -47,7 +47,7 @@
 // Checkbox
 @checkbox-size: 20px;
 @checkbox-border-color: @gray-light;
-@checkbox-transition-duration: .2s;
+@checkbox-transition-duration: 0.2s;
 @checkbox-label-margin: 10px;
 @checkbox-label-color: @text-color;
 @checkbox-checked-icon-color: @blue;
@@ -56,7 +56,7 @@
 @checkbox-disabled-background-color: @border-color;
 
 // Collapse
-@collapse-item-transition-duration: .3s;
+@collapse-item-transition-duration: 0.3s;
 @collapse-item-content-padding: 15px;
 @collapse-item-content-font-size: 13px;
 @collapse-item-content-line-height: 1.5;
@@ -90,7 +90,6 @@
 @nav-bar-title-font-size: 16px;
 @nav-bar-title-text-color: @text-color;
 
-
 // Notify
 @notify-padding: 6px 15px;
 @notify-font-size: 14px;
@@ -115,12 +114,13 @@
 @switch-node-size: 1em;
 @switch-node-z-index: 1;
 @switch-node-background-color: @white;
-@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+  0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
 @switch-background-color: @white;
 @switch-on-background-color: @blue;
-@switch-transition-duration: .3s;
-@switch-disabled-opacity: .4;
-@switch-border: 1px solid rgba(0, 0, 0, .1);
+@switch-transition-duration: 0.3s;
+@switch-disabled-opacity: 0.4;
+@switch-border: 1px solid rgba(0, 0, 0, 0.1);
 
 // SwitchCell
 @switch-cell-padding-top: 9px;
@@ -136,7 +136,7 @@
 @toast-text-color: @white;
 @toast-line-height: 20px;
 @toast-border-radius: 4px;
-@toast-background-color: rgba(@text-color, .88);
+@toast-background-color: rgba(@text-color, 0.88);
 @toast-icon-size: 48px;
 @toast-text-min-width: 96px;
 @toast-text-padding: 8px 12px;
@@ -145,3 +145,5 @@
 @toast-default-min-height: 90px;
 @toast-position-top-distance: 50px;
 @toast-position-bottom-distance: 50px;
+@import './animation.less';
+@import './base.css';

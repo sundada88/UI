@@ -2,7 +2,7 @@
   border-width: 1px 0;
 }
 
-[class*='van-hairline']::after {
+[class*='sun-hairline']::after {
   position: absolute;
   box-sizing: border-box;
   content: ' ';
