@@ -2,6 +2,12 @@
   border-width: 1px 0;
 }
 
+.sun-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 [class*='sun-hairline']::after {
   position: absolute;
   box-sizing: border-box;

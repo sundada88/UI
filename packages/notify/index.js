@@ -10,7 +10,6 @@ const initInstance = options => {
   instance = new (Vue.extend(SunNotify))({
     el: document.createElement('div')
   })
-
   document.body.appendChild(instance.$el)
 }
 

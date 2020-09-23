@@ -20,4 +20,5 @@
 </script>
 
 <style lang="less" scoped>
+@import "../../assets/less/var.less";
 </style>

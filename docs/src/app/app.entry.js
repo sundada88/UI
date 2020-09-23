@@ -8,6 +8,7 @@ export default {
   'col': () => import('packages/col/demo/index'),
   'collapse': () => import('packages/collapse/demo/index'),
   'loading': () => import('packages/loading/demo/index'),
+  'notice-bar': () => import('packages/notice-bar/demo/index'),
   'notify': () => import('packages/notify/demo/index'),
   'popup': () => import('packages/popup/demo/index'),
   'progress': () => import('packages/progress/demo/index'),

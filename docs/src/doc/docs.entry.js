@@ -8,6 +8,7 @@ export default {
   'col': () => import('packages/col/index.md'),
   'collapse': () => import('packages/collapse/index.md'),
   'loading': () => import('packages/loading/index.md'),
+  'notice-bar': () => import('packages/notice-bar/index.md'),
   'notify': () => import('packages/notify/index.md'),
   'popup': () => import('packages/popup/index.md'),
   'progress': () => import('packages/progress/index.md'),

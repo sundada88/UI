@@ -11,6 +11,7 @@ import CollapseItem from './collapse-item'
 import Icon from './icon'
 import Info from './info'
 import Loading from './loading'
+import NoticeBar from './notice-bar'
 import Notify from './notify/index.js'
 import Progress from './progress'
 import Popup from './popup'
@@ -35,6 +36,7 @@ const components = [
   Icon,
   Info,
   Loading,
+  NoticeBar,
   Notify,
   Popup,
   Progress,
