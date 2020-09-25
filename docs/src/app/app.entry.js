@@ -15,5 +15,6 @@ export default {
   'pull-refresh': () => import('packages/pull-refresh/demo/index'),
   'radio': () => import('packages/radio/demo/index'),
   'slider': () => import('packages/slider/demo/index'),
-  'switch': () => import('packages/switch/demo/index')
+  'switch': () => import('packages/switch/demo/index'),
+  'tag': () => import('packages/tag/demo/index'),
 }
