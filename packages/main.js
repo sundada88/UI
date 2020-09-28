@@ -21,6 +21,7 @@ import RadioGroup from './radio-group'
 import Row from './row'
 import Slider from './slider'
 import Switch from './switch'
+import SwitchCell from './switch-cell'
 import Tag from './tag'
 import "./style/base.css"
 
@@ -47,6 +48,7 @@ const components = [
   Row,
   Slider,
   Switch,
+  SwitchCell,
   Tag
 ]
 const install = Vue => {

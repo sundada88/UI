@@ -16,5 +16,6 @@ export default {
   'radio': () => import('packages/radio/demo/index'),
   'slider': () => import('packages/slider/demo/index'),
   'switch': () => import('packages/switch/demo/index'),
+  'switch-cell': () => import('packages/switch-cell/demo/index'),
   'tag': () => import('packages/tag/demo/index'),
 }

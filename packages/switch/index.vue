@@ -73,6 +73,7 @@ export default {
       if (!this.disabled && !this.loading) {
         this.$emit("input", !this.value)
         this.$emit("change", !this.value)
+        this.$emit("click", !this.value)
       }
     }
   },

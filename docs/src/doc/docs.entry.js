@@ -16,5 +16,6 @@ export default {
   'pull-refresh': () => import('packages/pull-refresh/index.md'),
   'slider': () => import('packages/slider/index.md'),
   'switch': () => import('packages/switch/index.md'),
+  'switch-cell': () => import('packages/switch-cell/index.md'),
   'tag': () => import('packages/tag/index.md'),
 }
