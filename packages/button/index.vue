@@ -58,11 +58,6 @@ export default {
       type: Boolean
     }
   },
-  data() {
-    return {
-      sundada: true
-    };
-  },
   methods: {
     handleClick(event) {
       if (!this.disabled) {
